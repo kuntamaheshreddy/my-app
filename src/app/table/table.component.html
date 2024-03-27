@@ -1,0 +1,48 @@
+<div>
+    <div class="top-containor">
+        <input type="text" (keypress)="filter1()" [(ngModel)]="value">
+        <button (click)="free()" type="button" class="btn btn-primary">Only free delivery</button>
+        <br>
+        <button (click)="pricelow()" type="button" class="btn btn-warning">price low to high</button>
+        <button (click)="pricehigh()"  type="button" class="btn btn-warning">price high to low</button>
+        <button (click)="ratinglow()" type="button" class="btn btn-warning">rating low to high</button>
+        <button (click)="ratinghigh()" type="button" class="btn btn-warning">rating high to low</button>
+        <br>
+        <button (click)="applydiscount()" type="button" class="btn btn-info">Apply 50% discount</button>
+        <button (click)="deliverycharge()" type="button" class="btn btn-info">price with delivery charges</button>
+        <br>
+        <button (click)="totalprice()" type="button" class="btn btn-dark">Total Price</button>
+        <button (click)="totalcart()" type="button" class="btn btn-dark">Total Cart items</button>
+        <br>
+        <div class="table-containor">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                    <th>S.no</th>
+                    <th>Name</th>
+                    <th>price</th>
+                    <th>rating</th>
+                    <th>free delivery</th>
+                    <th>action</th>
+                    </tr>
+                    <tbody>
+                   <tr *ngFor="let product of products">
+                    <td>{{product.sno}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.rating}}</td>
+                    <td style="color: red;">{{product.freeDelivery}}</td>
+
+                    <td><button type="button" class="btn btn-danger">Delete</button></td>
+                   </tr>
+                       
+                
+                   
+                    </tbody>
+                
+            </table>
+        </div>
+
+
+    </div>
+</div>

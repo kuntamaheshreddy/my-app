@@ -1,0 +1,20 @@
+.ready{
+    text-align: center;
+    color: rgb(225, 225, 225);
+    font-size: 25px;
+    
+}
+.xyz{
+    color: rgb(225, 225, 225);
+    font-weight: 700;
+
+    
+}
+button{
+    background-color: rgba(240, 18, 18, 0.908);
+    padding: 3px 5px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+}

@@ -1,0 +1,54 @@
+<h1>my age is {{age}}</h1>
+<h1>My name is {{name}}</h1>
+<h1>is Indian {{isIndian}}</h1>
+<h1>ages:{{ages}}</h1>
+
+<h1 *ngFor="let age of ages">
+    {{age}}  
+</h1>
+
+
+<h1>
+    <ol>
+       <li *ngFor="let state of states">
+            {{state}}
+        </li>
+    </ol>
+</h1>
+
+<select name="" id="">
+   <option *ngFor = "let city of cities" value="">{{city}}</option>
+</select>
+
+<h1 *ngFor="let product of products">{{product.name}}{{product.price}}
+
+</h1>
+
+<table border="3">
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+        <tbody>    
+
+                <tr *ngFor="let product of products price">
+                        <td>{{product.name}}</td>
+                        <td>{{product.price}}</td>
+                </tr>
+        </tbody>
+    
+</table>
+
+
+<button (click)="submit()">submit</button>
+
+<input (keypress)="store()">
+<input type="number" [(ngModel)]="phone">
+
+<h1>{{phone}}</h1>
+
+
+<br>
+<br>

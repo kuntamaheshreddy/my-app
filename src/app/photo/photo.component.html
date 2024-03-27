@@ -1,0 +1,6 @@
+  <div class="xyz" *ngFor="let photo of photos.data.memes">
+    <p class="title" >{{photo.name}}</p>
+    <p>width:{{photo.width}}</p>
+    <p>height:{{photo.height}}</p>
+    <img src={{photo.url}} alt="" width={{photo.width}} height={{photo.height}}>
+  </div>

@@ -1,0 +1,36 @@
+
+// Login-Page:
+--------------
+
+<div class="parent">
+    <div class="black-shade">
+        <h1>SLIDE LOGIN FORM</h1>
+    <div class="child">
+        <label for="email">Email:</label>
+    <input id="email" type="text" placeholder="Email"> <br>
+    <label for="password">Password:</label>
+    <input id="password" type="number" placeholder="Password"> <br>
+    <button routerLink="/dashboard">Login</button>
+</div>
+</div>
+</div>
+
+
+
+// Dashboard-Page:
+------------------
+
+<div class="parent">
+    <div class="left">
+        <h1>My Website</h1>
+        <hr>
+        <h1 routerLink="home">Home</h1>
+        <h1 routerLink="about">About</h1>
+        <button routerLink="/login">Logout</button>
+    </div>
+    <div class="right">
+        <router-outlet>
+            </router-outlet>
+    </div>
+</div>
+

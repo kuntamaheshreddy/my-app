@@ -1,0 +1,103 @@
+<h1>Create User Form</h1>
+
+<form [formGroup]="userform">
+    <label for="Name">Name</label>
+    <input type="text" formControlName="name">
+    <br>
+
+    <label for="Age">Age</label>
+    <input type="number" formControlName="age">
+    <br>
+
+    <label for="Phone">Phone</label>
+    <input type="text" formControlName="phone">
+    <br>
+    <label for="Email">Email</label>
+    <input type="email" formControlName="email">
+    <br>
+
+    <div formGroupName="address">
+        <label for="">City</label>
+        <input type="text" formControlName="city">
+        <br>
+
+        <label for="">Pin</label>
+        <input type="number" formControlName="pin">
+        <br>
+    </div>
+    <br>
+    <button (click)="add()" class="btn btn-info">Add Card</button>
+
+    <div formArrayName="cards">
+        <div *ngFor="let card of cardsFormArray.controls; let i=index">
+            <div formArrayName="{{i}}">
+                <label for="">Number:</label>
+                <input type="number" formControlName="number">
+                <br>
+
+                <label for="">Expiry:</label>
+                <input type="datetime-local" formControlName="expiry">
+                <br>
+
+                <label for="">CVV:</label>
+                <input type="number" formControlName="cvv">
+                <br>
+
+                <button (click)="delete(i)" class="btn btn-danger">Delete</button>
+                <hr>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <button (click)="submit()" class="btn btn-warning">submit</button>
+    <br><br>
+    <div>
+        <label for="">Type</label>
+        <input type="radio" name="select" (click)="ondayscholor()" formControlName="dayscholor">
+
+        <label for="">Dayscholor</label>
+        <input type="radio" name="select" (click)="onhostel()" formControlName="residential">
+        <label for="">Residential</label>
+        <br>
+        <div *ngIf="dayInput">
+            <label for="">Bus Fee</label>
+            <input type="number">
+            <br>
+        </div>
+        <div *ngIf="hostelInput">
+            <label for="">Hostel Fee</label>
+            <input type="number">
+            <br>
+        </div>
+    </div>
+    <div>
+
+        <label for="">Name</label>
+        <input type="text" FormControlName="name">
+        <label for="">Experience</label>
+        <input type="text" FormControlName="experience1">
+        <div>
+            <label for="">company</label>
+            <input type="text" FormControlName="company">
+            <label for="">Experience</label>
+            <input type="text" FormGroupName="experience2">
+            <label for="">Package</label>
+            <input type="text"FormControlName="package">
+        </div>
+        <button (click)="add1()"></button>
+        <div formArrayName="skills">
+            <div *ngFor="let skill of skillsFormArray.controls; let i=index">
+                <div>
+                    <label for="">Name</label>
+                    <input type="text" formControlName="name">
+                    <label for="">rating</label>
+                    <input type="text" formControlName="rating">
+                    <label for="">Experience</label>
+                    <input type="text" formControlName="experience">
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>

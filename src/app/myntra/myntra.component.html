@@ -1,0 +1,30 @@
+<div class="parent" >
+    <div class="left">
+        <h1 class="Filter">Filter</h1>
+        <ul class="list">
+            <h1>category</h1>
+            <li> <input type="checkbox" (click)="men()">Men's Clothing</li>
+            <li> <input type="checkbox" (click)="electronic()">Electronics</li>
+            <li> <input type="checkbox" (click)="jewelery()">Jewelery</li>
+            <li> <input type="checkbox" (click)="women()">Women's Clothing</li>
+        </ul>
+        <ul class="list">
+            <h1>Price</h1>
+            <li> <input type="checkbox" (click)="upto100()">Rs.10 to 100</li>
+            <li> <input type="checkbox" (click)="upto300()">Rs.100 to 300</li>
+            <li> <input type="checkbox" (click)="upto500()">Rs.300 to 500</li>
+            <li> <input type="checkbox" (click)="upto1000()">Rs.500 to 1000</li>
+        </ul>
+    </div>
+    <div class="right">
+        <div class="card" *ngFor="let product of products">
+            <img class="xyz" src={{product.image}} alt="">
+            <p class="rating">{{product.rating.rate}}</p>
+            <p class="category">{{product.category}}</p>
+            <p class="title">{{product.title}}</p>
+            <p class="price">Rs.{{product.price}}</p>
+        </div>
+      
+        
+    </div>
+</div>  

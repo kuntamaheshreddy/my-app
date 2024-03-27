@@ -1,0 +1,92 @@
+<!-- <div>
+    <table>
+        <tr>
+            <th>name</th>
+        </tr>
+        <tbody>
+            <tr *ngFor="let fourwheler of fourwheelers">
+                <td>{{fourwheler.color}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+<input type="text" [(ngModel)]="term" (keyup)="filterFourwheeler()">
+<select [(ngModel)]="pageNo" (change)="getPagedFourwheeler()">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+
+</select>
+
+<label for="">Coulmn</label>
+<select [(ngModel)]="column">
+    <option value="color">color</option>
+    <option value="model">model</option>
+</select>
+
+<label for="">Order</label>
+<select [(ngModel)]="order">
+    <option value="asec">ascending</option>
+    <option value="desc">descending</option>
+</select>
+<button (click)="getSortedCars()">sort</button>
+<hr>
+<hr>
+<label for="">Search</label>
+<!-- <input type="text" [(ngModel)]="queries.filter" (keyup)="loadData()"> -->
+
+<label for="">Page No:</label>
+<!-- <select [(ngModel)]="queries.pageNo" (change)="loadData()"> -->
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+<!-- </select> -->
+<label for="">Column</label>
+<select [(ngModel)]="queries.SortBy">
+    <option value="color">color</option>
+    <option value="model">model</option>
+</select>
+
+<label for="">Order</label>
+<select [(ngModel)]="queries.order">
+    <option value="asce">ascending</option>
+    <option value="desc">descending</option>
+</select>
+
+<button onclick="loadData()">sort</button>
+
+<div class="container mt-3">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Vehicle</td>
+                <td>Manufacturer</td>
+                <td>Model</td>
+                <td>Type</td>
+                <td>Fuel</td>
+                <td>Color</td>
+                <td>Image</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let fourwheler of fourwheeler">
+                <td>{{fourwheler.id}}</td>
+                <td>{{fourwheler.Vehicle}}</td>
+                <td>{{fourwheler.manufacturer}}</td>
+                <td>{{fourwheler.model}}</td>
+                <td>{{fourwheler.type}}</td>
+                <td>{{fourwheler.fuel}}</td>
+                <td>{{fourwheler.color}}</td>
+                <td><img class="width" src={{fourwheler.image}} alt="carimage"></td>
+                <td><button (click)="deleteCar(fourwheler.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
