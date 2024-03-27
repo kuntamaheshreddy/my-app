@@ -3,15 +3,14 @@
         <h1>Login</h1>
         <form action="" [formGroup]="loginForm">
         <label class="xyz" for="email">Email</label> 
-        <input id="email" type="text" placeholder="email" formcontrolName="email" class="formcontrol">
+        <input id="email" type="text" placeholder="email" formControlName="email" class="formcontrol">
         <br>
         <label class="xyz" for="password">Password</label>
-        <input id="password" type="text" placeholder="password" formcontrolName="password" class="formcontrol">
+        <input id="password" type="text" placeholder="password" formControlName="password" class="formcontrol">
         <br>
         <br>
         <button type="button" class="btn btn-primary" (click)="login()" >Login</button>
 
-        <!-- <button routerLink="/dashboard">Login</button> -->
     </form>
     </div>
 

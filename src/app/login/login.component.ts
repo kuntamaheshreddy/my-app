@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { LoginService } from '../login.service';
-import { Router } from '@angular/router';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +19,7 @@ export class LoginComponent {
    }
   )
 
-   login(){
+  login(){
      this._loginService.login(this.loginForm.value).subscribe(
        (data:any)=>{
          localStorage.setItem("my-app-token",data.token)
@@ -28,8 +28,7 @@ export class LoginComponent {
        },
        (err:any)=>{
          alert ("fail to login")
-       }
-      )
-    }
-
-}
+      }
+   )
+    }
+  }
