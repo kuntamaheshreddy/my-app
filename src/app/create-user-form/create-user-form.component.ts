@@ -17,7 +17,10 @@ export class CreateUserFormComponent {
       city: new FormControl(),
       pin: new FormControl()
     }),
-      cards: new FormArray([])
+      cards: new FormArray([]),
+      type: new FormControl(),
+      busfee: new FormControl(),
+      hostelfee: new FormControl()
   })
   get cardsFormArray(){
     return this.userform.get('cards') as FormArray;
@@ -39,25 +42,25 @@ export class CreateUserFormComponent {
     console.log(this.userform)
   }
    
-public dayInput: boolean=false;
-public hostelInput: boolean=false;
+// public dayInput: boolean=false;
+// public hostelInput: boolean=false;
 
 public radioForm = new FormGroup({
   dayscholor: new FormControl(),
   residential: new FormControl(),
-  busfee: new FormControl(),
-  hostelfee: new FormControl()
-}
-)
-ondayscholor(){
-  this.dayInput= true;
-  this.hostelInput=false;
 
 }
-onhostel(){
-  this.hostelInput=true;
-  this.dayInput=false;
-}
+)
+// ondayscholor(){
+//   this.dayInput= true;
+//   this.hostelInput=false;
+
+// }
+// onhostel(){
+//   this.hostelInput=true;
+//   this.dayInput=false;
+// }
+
 public candidateform= new FormGroup(
   {
     name: new FormControl(),
@@ -81,6 +84,24 @@ add1(){
     experience: new FormControl(),
     rating: new FormControl()
   })
+}
+constructor(){
+  this.userform.get('type')?.valueChanges.subscribe(
+    (data:any)=>{
+      if(data=='dayScholor'){
+        //add buss fee
+        this.userform.addControl('busfee', new FormControl());
+        //remove hostelfee
+        this.userform.removeControl("hostelFee");
+      }
+      else{
+        //add hostelfee
+        this.userform.addControl("hostelfee", new FormControl());
+        //remove busfee
+        this.userform.removeControl("busfee");
+      }
+    }
+  )
 }
 
 

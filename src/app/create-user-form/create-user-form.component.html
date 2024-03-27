@@ -52,27 +52,31 @@
     <br>
     <button (click)="submit()" class="btn btn-warning">submit</button>
     <br><br>
+    
     <div>
         <label for="">Type</label>
-        <input type="radio" name="select" (click)="ondayscholor()" formControlName="dayscholor">
-
+        <input type="radio" formControlName="type" value="dayScholor">
         <label for="">Dayscholor</label>
-        <input type="radio" name="select" (click)="onhostel()" formControlName="residential">
+        <input type="radio" formControlName="type" value="residential">
         <label for="">Residential</label>
+        <br><br>
+
         <br>
-        <div *ngIf="dayInput">
+        <div *ngIf="userform.get('type')?.value =='dayScholor'">
             <label for="">Bus Fee</label>
             <input type="number">
             <br>
         </div>
-        <div *ngIf="hostelInput">
-            <label for="">Hostel Fee</label>
-            <input type="number">
+            <div *ngIf="userform.get('type')?.value == 'residential'">
+            <label for="">Hostel Fee:</label>
+            <input type="number" formControlName="hostelfee"> 
             <br>
-        </div>
-    </div>
-    <div>
 
+        </div>
+        <button (click)="submit()" class="btn btn-warning">submit</button>
+
+        </div>
+        <!-- <div>
         <label for="">Name</label>
         <input type="text" FormControlName="name">
         <label for="">Experience</label>
@@ -98,6 +102,6 @@
                     
                 </div>
             </div>
-        </div>
-
-    </div>
+        </div> -->
+    <!-- </div> -->
+    
