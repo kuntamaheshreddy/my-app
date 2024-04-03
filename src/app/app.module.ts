@@ -34,6 +34,12 @@ import { DummydisplayComponent } from './dummydisplay/dummydisplay.component';
 import { CreateCarComponent } from './create-car/create-car.component';
 import { CreateAccountFormComponent } from './create-account-form/create-account-form.component';
 import { CreateUserFormComponent } from './create-user-form/create-user-form.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { CalculationComponent } from './calculation/calculation.component';
+import { OperationsComponent } from './operations/operations.component';
+import { AppratingComponent } from './apprating/apprating.component';
+import { TextareaComponent } from './textarea/textarea.component';
 
 
 @NgModule({
@@ -63,7 +69,13 @@ import { CreateUserFormComponent } from './create-user-form/create-user-form.com
     DummydisplayComponent,
     CreateCarComponent,
     CreateAccountFormComponent,
-    CreateUserFormComponent
+    CreateUserFormComponent,
+    ParentComponent,
+    ChildComponent,
+    CalculationComponent,
+    OperationsComponent,
+    AppratingComponent,
+    TextareaComponent
     
     
   ],

@@ -1,0 +1,16 @@
+<div class="parent">
+    <div class="child">
+        <h1>Calculator</h1>
+        <div class="xyz">
+            <label for="">a:</label>
+            <input type="number" [(ngModel)]="a">
+            <br>
+            <label for="">b:</label>
+            <input type="number" [(ngModel)]="b">
+        </div>
+        <app-operations [a]="a" [b]="b" (bEvent)="catch($event)"></app-operations>
+        <br>
+        <br>
+        <h1>Result: {{result}} </h1>
+    </div>
+</div>

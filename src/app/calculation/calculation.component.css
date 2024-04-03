@@ -1,0 +1,38 @@
+label{
+    padding: 10px;
+
+}
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    
+}
+.child{
+    background-image: url("src/assets/tree-736885_1280.jpg");
+    height: 500px;
+    width: 500px;
+    color: white;
+    box-shadow: 0px 10px 10px 3px;
+    border: 2px solid white;
+    border-radius: 25px;
+    background-position: center;
+
+
+}
+input{
+    height: 30px;
+    width: 150px;
+}
+label{
+    font-size: 40px;
+    width: 100px;
+}
+h1{
+    font-weight: 700;
+}
+
+

@@ -1,8 +1,13 @@
 .parent{
-   min-height: 100vh;
+    height: 100vh;
     width: 100vw;
-    background: #b8b8c7;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    background-color: rgb(209, 206, 201);
+    
+
 }
 .left{
     min-height: 100%;

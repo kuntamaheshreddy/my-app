@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormArray, FormControl, FormGroup, FormGroupName } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, FormGroupName, Validators } from '@angular/forms';
+import { cvv, tcsMail } from '../Validators';
 
 @Component({
   selector: 'app-create-user-form',
@@ -9,13 +10,13 @@ import { FormArray, FormControl, FormGroup, FormGroupName } from '@angular/forms
 export class CreateUserFormComponent {
 
   public userform:FormGroup= new FormGroup({
-    name: new FormControl(),
-    age: new FormControl(),
-    phone: new FormControl(),
-    email: new FormControl(),
+    name: new FormControl(null, [Validators.required,Validators.minLength(3)]),
+    age: new FormControl(null,[Validators.required, Validators.min(18), Validators.max(60)]),
+    phone: new FormControl(null,[Validators.required,Validators.min(100000000),Validators.max(9999999999)]),
+    email: new FormControl(null,[Validators.required, Validators.email,tcsMail]),
     address: new FormGroup({
-      city: new FormControl(),
-      pin: new FormControl()
+      city: new FormControl(null,[Validators.required]),
+      pin: new FormControl(null,[Validators.required,Validators.min(100000),Validators.max(999999)])
     }),
       cards: new FormArray([]),
       type: new FormControl(),
@@ -29,9 +30,9 @@ export class CreateUserFormComponent {
     
     this.cardsFormArray.push(
       new FormGroup({
-        number: new FormControl(),
+        number: new FormControl(null,[Validators.required,Validators.min(16),Validators.max(16)]),
         expiry: new FormControl(),
-        cvv: new FormControl()
+        cvv: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(3),cvv])
       })
     )
   }
@@ -39,6 +40,7 @@ export class CreateUserFormComponent {
     this.cardsFormArray.removeAt(i);
   }
   submit(){
+    this.userform.markAllAsTouched();
     console.log(this.userform)
   }
    

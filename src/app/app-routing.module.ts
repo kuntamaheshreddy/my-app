@@ -24,6 +24,10 @@ import { CreateCarComponent } from './create-car/create-car.component';
 import { CreateAccountFormComponent } from './create-account-form/create-account-form.component';
 import { CreateUserFormComponent } from './create-user-form/create-user-form.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { ParentComponent } from './parent/parent.component';
+import { CalculationComponent } from './calculation/calculation.component';
+import { AppratingComponent } from './apprating/apprating.component';
+
 
 
 
@@ -53,8 +57,10 @@ const routes: Routes = [
     {path:'angularmaterial', component:AngularMaterialComponent},
     {path:'createcar', component:CreateCarComponent},
     {path:'createaccountform',component:CreateAccountFormComponent},
-    {path:'createuserform',component:CreateUserFormComponent}
-    
+    {path:'createuserform',component:CreateUserFormComponent},
+    {path:'parent', component:ParentComponent},
+    {path:'calculation', component:CalculationComponent},
+    {path:'apprating',component:AppratingComponent}
 
   ]},
 
